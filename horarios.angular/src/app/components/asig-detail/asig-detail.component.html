@@ -1,0 +1,28 @@
+<!-- asig-detail.component.html -->
+<!--<DIV style="color:white"></DIV>-->
+<DIV class="container semana" style="width: 100%; color:white">
+   <div class="containerRow" style="margin-left: 0%;">
+     <section class="rutinas" style="width:70%; text-align: center; display: inline-block;">
+         <span style="font-size: 30px;">Detalle &nbsp;de &nbsp;la &nbsp;<b>ASIGNATURA</b></span>
+    <DIV *ngFor="let asig of asignaturas; let i=index;">
+      <div *ngIf="abrev==asig.abrev">
+        <br><span>Abreviatura: {{asig.abrev}}</span>
+        <br><span>Nombre: {{asig.name}}</span>
+        <br><br><img style="width:40%; height: 40%;" src="./assets/{{asig.foto}}"><br>
+        <br><br><span>OBSERVACIONES </span><button type="text" (click)="editar()"> ✏️</button>
+        <br><span>{{asig.observaciones!}} </span>
+        <div *ngIf="esEditar==true">
+           <br><input style="font-size: 18px;" id="observaciones" #observaciones [(ngModel)]="asig.observaciones!" placeholder="Edite observaciones">
+           &nbsp; <button type="button" (click)="save(i, observaciones.value)"> &nbsp; 💾</button><!--observaciones.value=''-->
+        </div>
+
+      </div>
+    </DIV>
+     </section>
+   </div>
+
+<!--   <main>
+     <div style="color: white"></div>
+   </main>-->
+</DIV>
+
