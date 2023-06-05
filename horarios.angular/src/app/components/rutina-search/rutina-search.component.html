@@ -1,0 +1,13 @@
+<!--hero-search.component.html-->
+<div id="search-component">
+  <label for="search-box">Buscar rutina 🔎 </label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)"
+      placeholder= "Introduzca el nombre" />
+  <ul class="search-result">
+    <!--<li *ngFor="let rutina of rutinas$ | async" >-->
+      <!--<span> "routerLink=/detail/{{rutina.id}}"></span>
+        {{rutina.name}}
+      </a>
+    </li>-->
+  </ul>
+</div>

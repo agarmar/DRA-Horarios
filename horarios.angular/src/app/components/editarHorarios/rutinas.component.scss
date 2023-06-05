@@ -1,0 +1,208 @@
+/* semana.component.scss */
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  //flex-flow:row wrap;
+  font-size: 20px;
+}
+
+header {
+  order: 1;
+  //height:50px; //100px;
+  flex: 0 0 100%;
+  font-size: 20px;
+}
+
+main {
+  order: 2;
+  flex: 1;
+  min-height: 500px;
+  height: 100vh;
+}
+
+a {
+  background-color: #2563eb;
+  border-radius: 2px;
+  padding: 1px;
+  font-size: 1.0rem; //1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  //width: 1em;
+  //min-width: 20px; // era 70px;
+  width: 300px;
+  margin: .1rem auto; //.5rem auto;
+  gap: 13px;
+  box-sizing: border-box;
+  /* flexbox */
+  order: 0;
+  flex: 0 0 auto; //0 1 auto;
+  align-self: auto;
+
+}
+
+@media (min-width: 600px) {
+  a {
+    width: 12%; //18%;
+    box-sizing: content-box;
+  }
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: rgb(142, 136, 213);
+}
+
+
+.dias-semana {
+  gap: 13px;
+}
+
+
+li {
+  background-color: #2563eb;
+  border-radius: 2px;
+  padding: 1px;
+  font-size: 1.0rem; //1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  //width: 1em;
+  //min-width: 20px; // era 70px;
+  width: 200px;
+  margin: .1rem auto; //.5rem auto;
+  gap: 13px;
+  box-sizing: border-box;
+  /* flexbox */
+  order: 0;
+  flex: 0 0 auto; //0 1 auto;
+  align-self: auto;
+}
+
+@media (min-width: 600px) {
+   li {
+    width: 12%; //18%;
+    box-sizing: content-box;
+  }
+}
+
+//li:hover {
+//  background-color: black;
+//}
+
+.semana {
+  gap: 13px;
+  font-size: 20px;
+}
+
+.rutinas {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 1px;
+  width: 15em;
+  //margin: 10px;
+  font-size: 20px;
+}
+
+.rutinas li {
+  display: flex;
+}
+
+.rutinas button {
+  flex: 1;
+  cursor: auto;
+  position: relative;
+             // left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;    //align-items: stretch;
+  height: 1.8em;
+}
+
+.rutinas button:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.rutinas button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.rutinas button.selected {
+  background-color: black;
+  color: white;
+}
+
+.rutinas button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.rutinas button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.rutinas .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 2em;//line-height: 1em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.rutinas .name {
+  align-self: center;
+}
+
+button {
+  background-color: #2563eb;
+  border-radius: 2px;
+  padding: 1px;
+  font-size: 1.0rem; //1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  //width: 1em;
+  //min-width: 20px; // era 70px;
+  width: 300px;
+  margin: .1rem auto; //.5rem auto;
+  gap: 13px;
+  box-sizing: border-box;
+  /* flexbox */
+  order: 0;
+  flex: 0 0 auto; //0 1 auto;
+  align-self: auto;
+
+}
+
+@media (min-width: 600px) {
+  button {
+    width: 12%; //18%;
+    box-sizing: content-box;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(142, 136, 213);
+}

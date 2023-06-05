@@ -1,0 +1,31 @@
+<div id="grupos" style="text-align:center; font-size:40px; color:white">
+  <span><b>GRUPOS DE ALUMNOS</b></span>
+  <p>Pendiente de implementar</p>
+</div>
+
+<div style="text-align:center; font-size:40px; color:white">
+        <div>
+          <form id="cursos" style="width:300px; font-size: 25px;" >
+            <span>GRUPOS DE ALUMNOS &nbsp; </span>
+                  <select (change)="calcular(selectedAsig)" style="width:300px; font-size: 25px" matNativeControl [(ngModel)]="selectedAsig" id="grupos"  readOnly="true">
+                    <!--<div *ngIf="grup.abrev=='1º-A'; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                      <option disabled selected value="indefinido">Selecione una opción</option>
+                      <option selected value="1º-A">1º A</option>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                      <option [ngValue]="grup.abrev">{{grup.curso}} {{grup.grupo}}</option>
+                    </ng-template>
+                  </div>-->
+                    <option disabled selected value="indefinido">Selecione una opción</option>
+                    <option *ngFor="let grup of grupos" [ngValue]="grup.abrev">{{grup.curso}} {{grup.grupo}}</option>
+                  </select>
+          </form>
+        </div>
+      <div style="text-align: center; flex: 0 0 100%;">
+      <!-- <a style="text-align: center;" type="button" (click)="borrar(i)">❌</a>-->
+      </div>
+  <div style="text-align: center;">
+   <!-- <a style="width: 400px; cursor: pointer; font-size: 24px;" type="button" (click)="save()">  <b>GUARDAR CAMBIOS</b> &nbsp; 💾</a>-->
+  </div>
+</div>

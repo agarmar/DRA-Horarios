@@ -1,0 +1,54 @@
+<!--rutinas.component.html-->
+<div class="container">
+  <header>
+    <div *ngIf="semanaCompleta; else vistaDia" class="container semana" id=semana style="width:100%; height:100%; color: white; font-size: small;">
+
+      <section class="rutinas" style="width:15%; text-align: center; display: inline-block;">
+        <b>{{semana!.curso}}-{{semana!.grupo}}</b>
+        <div *ngFor="let tramo of tramos" style="text-align: center;">
+          <b>--------</b>
+              <br><span>{{tramo.de}}</span>
+              <br><span>{{tramo.a}}</span>
+        </div>
+        <b>--------</b>
+      </section>
+      <section *ngFor="let dia of semana!.dias!; let i = index;" class="rutinas" style="width:17%; text-align: center; display: inline-block;">
+        <br>
+        <div *ngFor="let sesion of dia!.sesiones; let j = index;" style="text-align: center; align-items: center;">
+          <b>--------</b>
+          <form id="asig{{i}}--{{j}}" style="width:300px;" ><!-- [formGroup]="">-->
+              <span>{{sesion.que.asignatura}} &nbsp; </span>
+                    <select (change)="calcular(selectedAsig)"
+                    style="width:200px; font-size: 18px;" matNativeControl [(ngModel)]="selectedAsig" id="asig{{i}}-{{j}}"  readOnly="true">
+                      <option value="asig.sin" default selected>=</option>
+                      <option value="asig.no">---</option>
+                      <option *ngFor="let asig of asignaturas" [ngValue]="asig.name">{{asig.name}}</option>
+                    </select>
+
+              <br><span>{{sesion.que.profesor}} &nbsp; </span>
+              <select style="width:200px; font-size: 18px;" matNativeControl [(ngModel)]="selectedAsig" id="asig{{i}}-{{j}}"  readOnly="true">
+                <option value="prof.sin" default selected>=</option>
+                <option value="prof.no">---</option>
+                <option *ngFor="let prof of profesores" [value]="prof.name">{{prof.name}}</option>
+              </select>
+
+            </form>
+        </div>
+        <b>--------</b>
+        <div style="text-align: center; flex: 0 0 100%;">
+         <a style="text-align: center;" type="button" (click)="borrar(i)">❌</a>
+         &nbsp; &nbsp; <a style="text-align: center;" type="button" (click)="nada(i)">🔂</a>
+        </div>
+      </section>
+    </div>
+    <div style="text-align: center;"><!--class="rutinas"-->
+      <a style="width: 400px; cursor: pointer; font-size: 24px;" type="button" (click)="save()">  <b>GUARDAR CAMBIOS</b> &nbsp; 💾</a>
+    </div>
+
+  </header>
+
+  <ng-template #vistaDia>
+    <app-dia-detail [dia]="diaSeleccionado"></app-dia-detail>
+  </ng-template>
+
+</div>

@@ -1,0 +1,7 @@
+<!--header-->
+<div class="container" style="background-color: rgb(226, 226, 43);">
+  <span>Tramo</span>
+  <a *ngFor="let dia of semana!.dias" (click)="seleccionarDia(dia)">{{ dia.name | titlecase}}</a>
+
+</div>
+<!--/header-->

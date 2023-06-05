@@ -1,0 +1,31 @@
+<!-- sesion-detail.component.html -->
+<!--<DIV style="color:white"></DIV>-->
+<DIV class="container semana" style="width: 100%; color:white">
+  <div class="containerRow" style="margin-left: 0%;">
+    <section class="rutinas" style="width:70%; text-align: center; display: inline-block;">
+      <span style="font-size: 30px;">Detalle &nbsp;de &nbsp;la &nbsp;<b>SESIÓN</b></span>
+        <br><br><span>Día: {{dia | uppercase}}</span>
+        <br><span>Tramo: {{tramo!.de}} {{tramo!.a}}</span>
+        <br><br><img style="width:30%; height: 40%;" src="./assets/general.png"><br>
+        <br><br><span>OBSERVACIONES </span><button type="text" (click)="editar()"> ✏️</button>
+    <DIV *ngFor="let sesion of _sesiones; let i=index;">
+      <div *ngIf="_dia==sesion.dia && hora==sesion.hora">
+           <span>{{sesion!.observaciones!}} </span>
+            <div *ngIf="esEditar==true">
+              <br><input style="font-size: 18px;" type="text" id="observaciones" #observaciones placeholder="Edite observaciones"
+              [(ngModel)]="sesion!.observaciones!">
+              &nbsp; <button type="button" (click)="saveObserv(i, _sesion!, observaciones.value)" sesionName.value="descrip.value"> &nbsp; 💾</button>
+             <!-- &nbsp; <button type="button" (click)="saveObserv(_sesion!, observaciones.value)" sesionName.value="descrip.value"> &nbsp; 💾</button>-->
+            </div>
+          </div>
+        </DIV>
+      <!--</div>
+    </DIV>-->
+    </section>
+  </div>
+
+  <!--
+    <main>
+     <div style="color: white"></div>
+   </main>-->
+</DIV>

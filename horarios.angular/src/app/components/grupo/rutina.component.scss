@@ -1,0 +1,95 @@
+/*rutina.component.scss*/
+/*.container {
+  display:flex;
+  flex-flow:row wrap;
+}*/
+header {
+  order: 1;
+  height: 100px;
+  flex: 0 1 100%;
+}
+
+.header-rutina {
+  background-color:#2c2f48;// #1e293b;
+  z-index: 1;
+  flex: 1 1 auto;
+  //order:1;
+  height: 50px;//30px; //100px;
+  //flex:0 0 100%;
+  font-size: 30px;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/*main {
+  order:2;// 3;
+  flex: 1;
+  min-height:500px;
+}*/
+
+main {
+  flex: 100vh;
+  flex-grow: 1;
+  //width: 100vh;
+}
+
+h2 {
+  text-align: center;
+}
+
+a {
+  background-color:#2563eb; // #3f525c;
+  //background: linear-gradient(to right, #2563eb 0%, #598EF3 90%); //background-color: #3f525c;
+  border-radius: 2px;
+  padding: 0rem; //1rem;
+  font-size: 24px; //font-size: 1.2rem; //1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #D3E6FE;
+  text-align: center;
+  width: 100%;
+  min-width: 100px; // era 70px;
+  margin: .5rem auto; //.5rem auto;
+  box-sizing: border-box;
+  /* flexbox */
+  order: 0;
+  flex: 0 0 auto; //0 1
+  align-self: auto;
+}
+
+@media (min-width: 600px) {
+  a {
+    width: 18%;
+    box-sizing: content-box;
+  }
+}
+
+a:hover {
+  background-color: blue; //background-color: black;
+}
+
+
+
+a:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+a.selected {
+  background-color: black;
+  color: white;
+}
+
+a.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+a.selected:active {
+  background-color: black;
+  color: white;
+}

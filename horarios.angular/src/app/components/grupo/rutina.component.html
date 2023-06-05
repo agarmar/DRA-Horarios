@@ -1,0 +1,9 @@
+<!--rutina/rutina.component.html-->
+<div id=rutina> <!--class="container"-->
+  <div style="background-color: rgb(43, 226, 113);"> <!--class="header-rutina"-->
+    <a  routerLink="/grupo/semana" (click)="verSemana()">Ver horario</a>
+     &nbsp; &nbsp; <a routerLink="/grupo/edicion">Editar horario</a>
+  </div>
+  <!--cuerpo de contenido-->
+  <router-outlet></router-outlet>
+</div>

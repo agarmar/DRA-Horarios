@@ -1,0 +1,11 @@
+<DIV class="container semana" id=semana style="width:100%; color: white; font-size: small;">
+
+  <section *ngFor="let dia of semana!.dias!" class="rutinas"
+    style="width:15%; text-align: center; display: inline-block;">
+    <b>{{dia!.name}}</b>
+    <div *ngFor="let sesion of dia!.sesiones" style="text-align: center;">>
+      {{sesion.que}}<br>
+    </div>
+  </section>
+
+</DIV>

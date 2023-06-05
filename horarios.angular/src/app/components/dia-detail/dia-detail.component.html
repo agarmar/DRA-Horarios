@@ -1,0 +1,45 @@
+<!-- dia-detail.component.html -->
+<DIV style="color:white">
+  <!--<b><h2 style="color: #369; text-align: center;">GRUPO: 1ºA - DÍA: {{dia.name | uppercase}}</h2></b>-->
+  <b><h2 style="color: rgb(213, 219, 225); text-align: center;">GRUPO: {{semana!.curso}}-{{semana!.grupo}} - DÍA: {{dia.name | uppercase}}</h2></b>
+</DIV>
+
+
+<DIV class="container semana" style="width: 100%; color:white">
+  <div class="containerRow" style="margin-left: 0%;">
+    <section class="rutinas" style="width:14%; text-align: center; display: inline-block; background-color: rgb(67, 77, 72);" >
+      <div *ngFor="let tramo of tramos" style="text-align: center; line-height: 25px;">
+        <b>--------</b>
+        <br>{{tramo.de}}
+        <br>{{tramo.a}}
+      </div>
+      <b>--------</b>
+    </section>
+
+    <section class="rutinas" style="width:15%; text-align: center; display: inline-block;">
+      <div *ngFor="let sesion of dia.sesiones; let i=index;" style="text-align: center; line-height: 25px;"> <!--class="containerRow"-->
+        <b>--------</b>
+        <br><a routerLink="asig/{{sesion.que.asignatura}}">{{sesion.que.asignatura}}</a>
+        &nbsp; &nbsp; <a routerLink="sesion/{{dia.name}}-{{i+1}}">➡️</a>
+        <br><a routerLink="prof/{{sesion.que.profesor}}">{{sesion.que.profesor}}</a>
+      </div>
+      <b>--------</b>
+    </section>
+
+    <section class="rutinas" style="width:67%; text-align: center; display: inline-block;" >
+        <router-outlet></router-outlet>
+    </section>
+  </div>
+
+
+
+
+
+
+  <main>
+    <div style="color: white">
+      <span></span>
+    </div>
+  </main>
+</DIV>
+

@@ -1,0 +1,28 @@
+<!-- prof-detail.component.html -->
+<!--<DIV style="color:white"></DIV>-->
+<DIV class="container semana" style="width: 100%; color:white">
+  <div class="containerRow" style="margin-left: 0%;">
+    <section class="rutinas" style="width:70%; text-align: center; display: inline-block;">
+      <span style="font-size: 30px;">Detalle &nbsp;del &nbsp;<b>PROFESOR</b></span>
+    <DIV *ngFor="let prof of profesores; let i=index;">
+          <div *ngIf="abrev==prof.abrev">
+        <br><span>Abreviatura: {{prof.abrev}}</span>
+        <br><span>Nombre: {{prof.name}}</span>
+        <br><img style="width:30%; height: 40%;" src="./assets/general.png"><br>
+        <br><br><span>OBSERVACIONES </span><button type="text" (click)="editar()"> ✏️</button>
+        <br><span>{{prof.observaciones!}} </span>
+        <div *ngIf="esEditar==true">
+           <br><input style="font-size: 18px;" type="text" id="observaciones" #observaciones
+           [(ngModel)]="prof.observaciones!" placeholder="Edite observaciones">
+           &nbsp; <button type="button" (click)="save(i, observaciones.value)" sesionName.value="descrip.value"> &nbsp; 💾</button>
+        </div>
+      </div>
+    </DIV>
+    </section>
+  </div>
+
+<!--   <main>
+     <div style="color: white"></div>
+   </main>-->
+</DIV>
+

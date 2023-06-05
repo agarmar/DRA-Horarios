@@ -1,0 +1,40 @@
+<!--semana/semana.component.html-->
+<div class="container">
+  <header>
+    <app-subheader-rutina></app-subheader-rutina>
+
+    <div *ngIf="semanaCompleta; else vistaDia" class="container semana" id=semana style="width:100%; height:100%; color: white; font-size: small;">
+      <section class="rutinas" style="width:15%; text-align: center; display: inline-block; background-color: rgb(67, 77, 72);">
+        <b>{{semana!.curso}}-{{semana!.grupo}}</b>
+        <div *ngFor="let tramo of tramos" style="text-align: center;">
+          <b>--------</b>
+              <br><span>{{tramo.de}}</span>
+              <br><span>{{tramo.a}}</span>
+        </div>
+        <b>--------</b>
+        <!--<button style="text-align: center;" type="button" class="delete" title="borrar {{dia}}">❌</button>-->
+      </section>
+
+      <section *ngFor="let dia of semana!.dias!" class="rutinas" style="width:17%; text-align: center; display: inline-block;">
+        <br>
+        <div *ngFor="let sesion of dia!.sesiones" style="text-align: center;">
+          <b>--------</b><!--{{sesion.que}}-->
+          <!--<div *ngFor="let hora of sesion!.donde" style="text-align: center;">
+            <div *ngIf="(sesion.donde.hora ==hora)">-->
+              <br><span>{{sesion.que.asignatura}}</span>
+              <br><span>{{sesion.que.profesor}}</span>
+            <!--</div>
+          </div>-->
+          <!--<img style="width:30%; height: 30%;" src="./assets/{{sesion.que.foto}}">-->
+        </div>
+        <b>--------</b>
+        <!--<button style="text-align: center;" type="button" class="delete" title="borrar {{dia!.name}}">❌</button>-->
+      </section>
+    </div>
+  </header>
+
+  <ng-template #vistaDia>
+    <app-dia-detail [dia]="diaSeleccionado"></app-dia-detail>
+  </ng-template>
+
+</div>
